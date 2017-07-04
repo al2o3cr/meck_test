@@ -1,0 +1,13 @@
+
+language: elixir
+elixir:
+  - 1.4.5
+  - 1.5.0-rc.0
+otp_release:
+  - 19.3
+  - 20.0
+script:
+  - mix coveralls
+branches:
+  except:
+    - /^[0-9]\.[0-9]/
