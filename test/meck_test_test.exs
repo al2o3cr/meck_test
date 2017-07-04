@@ -1,15 +1,16 @@
 defmodule MeckTestTest do
   use ExUnit.Case
-  import Mock
 
   test "greets the world" do
     assert MeckTest.hello() == :world
   end
 
   test "can be mocked" do
-    with_mock MeckTest, [hello: fn -> :mock end] do
-      assert MeckTest.hello() == :mock
-    end
+    :meck.new(MeckTest)
+    :meck.expect(MeckTest, :hello, fn -> :mock end)
+    assert MeckTest.hello() == :mock
+    assert :meck.validate(MeckTest)
+    :meck.unload(MeckTest)
     assert MeckTest.hello() == :world
   end
 end

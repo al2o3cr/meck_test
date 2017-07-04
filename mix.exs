@@ -21,7 +21,7 @@ defmodule MeckTest.Mixfile do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:mock, "~> 0.2"}
+      {:meck, "~> 0.8.7"}
     ]
   end
 end
