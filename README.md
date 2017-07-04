@@ -7,22 +7,25 @@ Example for a bug with Meck and Elixir 1.5.0-rc.0
 ```
 $ asdf local erlang 20.0
 $ asdf local elixir 1.4.5
-$ mix coveralls
+$ mix test --cover
+==> mock
+Compiling 1 file (.ex)
+Generated mock app
+==> meck_test
 Compiling 1 file (.ex)
 Generated meck_test app
+Cover compiling modules ...
 ..
 
-Finished in 0.2 seconds
+Finished in 0.3 seconds
 2 tests, 0 failures
 
-Randomized with seed 271060
+Randomized with seed 539434
+
+Generating cover results ...
 Analysis includes data from imported files
 ["/Users/paulswartz/Projects/github/meck_test/Elixir.MeckTest.coverdata",
  "/Users/paulswartz/Projects/github/meck_test/Elixir.MeckTest_meck_original.coverdata"]
-----------------
-COV    FILE                                        LINES RELEVANT   MISSED
-  0.0% lib/meck_test.ex                               18        0        0
-[TOTAL]   0.0%
 ```
 
 ## Output in 1.5.0-rc.0 (actual)
@@ -30,14 +33,19 @@ COV    FILE                                        LINES RELEVANT   MISSED
 ```
 $ asdf local erlang 20.0
 $ asdf local elixir 1.5.0-rc.0
-$ mix coveralls
+$ mix test --cover
+==> mock
+Compiling 1 file (.ex)
+Generated mock app
+==> meck_test
 Compiling 1 file (.ex)
 Generated meck_test app
+Cover compiling modules ...
 .
 
   1) test can be mocked (MeckTestTest)
      test/meck_test_test.exs:9
-     ** (EXIT from #PID<0.232.0>) an exception was raised:
+     ** (EXIT from #PID<0.219.0>) an exception was raised:
          ** (MatchError) no match of right hand side value: [error: {:no_abstract_code, <<70, 79, 82, 49, 0, 0, 2, 124, 66, 69, 65, 77, 65, 116, 85, 56, 0, 0, 0, 123, 0, 0, 0, 10, 29, 69, 108, 105, 120, 105, 114, 46, 77, 101, 99, 107, 84, 101, 115, 116, 95, 109, 101, 99, 107, 95, 111, 114, 105, ...>>}]
              (meck) /Users/paulswartz/Projects/github/meck_test/deps/meck/src/meck_cover.erl:32: :meck_cover.compile_beam/2
              (meck) /Users/paulswartz/Projects/github/meck_test/deps/meck/src/meck_proc.erl:387: :meck_proc.backup_original/3
@@ -51,10 +59,7 @@ Generated meck_test app
 Finished in 0.2 seconds
 2 tests, 1 failure
 
-Randomized with seed 206228
-----------------
-COV    FILE                                        LINES RELEVANT   MISSED
-  0.0% lib/meck_test.ex                               18        0        0
-[TOTAL]   0.0%
-----------------
+Randomized with seed 374996
+
+Generating cover results ...
 ```

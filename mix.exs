@@ -7,9 +7,7 @@ defmodule MeckTest.Mixfile do
       version: "0.1.0",
       elixir: "~> 1.4.5 or ~> 1.5-rc",
       start_permanent: Mix.env == :prod,
-      deps: deps(),
-      test_coverage: [tool: ExCoveralls],
-      preferred_cli_env: [coveralls: :test]
+      deps: deps()
     ]
   end
 
@@ -23,8 +21,7 @@ defmodule MeckTest.Mixfile do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:mock, "~> 0.2"},
-      {:excoveralls, "~> 0.7"}
+      {:mock, "~> 0.2"}
     ]
   end
 end
