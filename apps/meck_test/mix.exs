@@ -1,9 +1,9 @@
-defmodule MeckTestUmbrella.Mixfile do
+defmodule MeckTest.Mixfile do
   use Mix.Project
 
   def project do
     [
-      apps_path: 'apps',
+      app: :meck_test,
       version: "0.2.0",
       elixir: "~> 1.6",
       start_permanent: Mix.env == :prod,
@@ -25,3 +25,4 @@ defmodule MeckTestUmbrella.Mixfile do
     ]
   end
 end
+

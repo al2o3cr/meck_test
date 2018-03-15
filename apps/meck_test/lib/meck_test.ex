@@ -13,6 +13,7 @@ defmodule MeckTest do
 
   """
   def hello do
+    IO.puts(:rand.uniform(10))
     :world
   end
 end
