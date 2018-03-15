@@ -4,9 +4,10 @@ defmodule MeckTest.Mixfile do
   def project do
     [
       app: :meck_test,
-      version: "0.1.0",
-      elixir: "~> 1.4.5 or ~> 1.5-rc",
+      version: "0.2.0",
+      elixir: "~> 1.6",
       start_permanent: Mix.env == :prod,
+      test_coverage: [tool: Coverex.Task, log: :debug],
       deps: deps()
     ]
   end
@@ -21,7 +22,8 @@ defmodule MeckTest.Mixfile do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:meck, "~> 0.8.7"}
+      {:coverex, "~> 1.4.10"},
+      {:meck, "~> 0.8.9"}
     ]
   end
 end
